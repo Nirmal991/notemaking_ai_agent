@@ -1,17 +1,17 @@
 export const setAuthCookies = (
-    res: any,
-    accessToken: string,
-    refreshToken: string
+  res: any,
+  accessToken: string,
+  refreshToken: string
 ) => {
-    res.cookies("accessToken", accessToken, {
-        httpOnly: true,
-        secure: true,
-        maxAge: 15 * 60 * 100,
-    });
+  res.cookie("accessToken", accessToken, {
+    httpOnly: true,
+    secure: true,
+    maxAge: 15 * 60 * 1000,
+  });
 
-    res.cookies("refreshToken", refreshToken, {
-        httpOnly: true,
-        secure: true,
-        maxAge: 15 * 60 * 1000,
-    })
-}
+  res.cookie("refreshToken", refreshToken, {
+    httpOnly: true,
+    secure: true,
+    maxAge: 15 * 60 * 1000,
+  });
+};

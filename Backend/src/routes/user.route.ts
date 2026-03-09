@@ -1,10 +1,14 @@
 import express from 'express';
-import { registerUser } from '../controllers/user.controller.js';
+import { getCurrentUser, loginUser, logoutUser, registerUser } from '../controllers/user.controller.js';
 import { validateData } from '../middlewares/validate.middleware.js';
-import { registerUserSchema } from '../validations/auth.schema.js';
+import { loginUserSchema, registerUserSchema } from '../validations/auth.schema.js';
+import { verifyJwt } from '../middlewares/auth.middleware.js';
 
 const router = express.Router();
 
 router.route('/register').post(validateData(registerUserSchema),registerUser)
+router.route('/login').post(validateData(loginUserSchema), loginUser);
+router.route('/current-user').get(verifyJwt, getCurrentUser)
+router.route('/logout').get(verifyJwt, logoutUser)
 
 export default router;
