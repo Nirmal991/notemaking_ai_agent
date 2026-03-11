@@ -32,6 +32,8 @@ app.get('/test', async(req:Request,res: Response) => {
 
 import userRouter from './routes/user.route.js';
 import agentRoute from './routes/agent.route.js' 
+import noteRoute from './routes/note.route.js' 
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/agent', agentRoute);
+app.use('/api/v1/notes', noteRoute);
