@@ -1,4 +1,5 @@
 import React from 'react'
+import LoginForm from '../components/LoginPageComponets/LoginForm'
 
 const LoginPage = () => {
   return (
@@ -7,7 +8,7 @@ const LoginPage = () => {
         <div className="absolute w-125 h-125 bg-indigo-600/10 blur-[120px] rounded-full -top-40 -left-40" />
         <div className="absolute w-125 h-125 bg-purple-600/10 blur-[120px] rounded-full bottom-0 right-0" />
       </div>
-      
+      <LoginForm />
     </div>
   )
 }
